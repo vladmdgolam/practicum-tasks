@@ -23,4 +23,5 @@ body {
   background: pink;
   width: 764px;
   height: 412px;
+  border-radius: 8px;
 }
