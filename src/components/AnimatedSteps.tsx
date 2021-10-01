@@ -1,10 +1,15 @@
 import { motion } from "framer-motion"
-import Step from "../steps/5"
+import Fourth from "../steps/4"
+import Fifth from "../steps/5"
+
+const steps = [Fourth]
 
 const AnimatedSteps = ({ index = 0 }) => {
   return (
     <motion.svg width={700} height={248} fill="none">
-      <Step />
+      {steps.map((Step, i) => (
+        <Step key={i} visible={i === index} />
+      ))}
     </motion.svg>
   )
 }

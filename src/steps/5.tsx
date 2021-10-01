@@ -105,7 +105,7 @@ const Step = () => {
             strokeWidth={1.5}
           />
           <text
-            id={2}
+            id="2"
             fill="#1A1B22"
             xmlSpace="preserve"
             style={{
@@ -116,7 +116,7 @@ const Step = () => {
             letterSpacing="0px"
           >
             <tspan x={329.161} y={227.167}>
-              {"&#x2013;2"}
+              {"\u20132"}
             </tspan>
           </text>
         </g>

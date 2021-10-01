@@ -1,16 +1,33 @@
-import { AnimatePresence, motion } from "framer-motion"
+import { motion } from "framer-motion"
 import AnimatedStep from "../components/AnimatedStep"
+import { defaultAnimations, duration } from "../constants/index"
 
-const animations = { top: {} }
+const animations: { [index: string]: any } = {
+  MainText: { ...defaultAnimations },
+  "x-2": { ...defaultAnimations },
+  default: { ...defaultAnimations },
+  "Vector 1": {
+    initial: { pathLength: 0 },
+    animate: { pathLength: 1 },
+    transition: { duration: duration / 5 },
+  },
+  "Line 37": {
+    initial: { x2: 356 },
+    animate: { x2: 576 },
+    transition: {
+      delay: duration / 5,
+      duration: (duration * 4) / 5,
+    },
+  },
+}
 
-const duration = 0.5
-
-const Step = () => {
+const Step = ({ visible = false }) => {
   return (
-    <AnimatedStep>
+    <AnimatedStep animations={animations}>
       <g id="Content">
         <g id="Coordinate line">
           <motion.text
+            id="MainText"
             fill="#1A1B22"
             style={{
               whiteSpace: "pre",
@@ -18,9 +35,7 @@ const Step = () => {
             fontFamily="Helvetica Neue"
             fontSize={18}
             letterSpacing={0}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: duration }}
+            // {...defaultAnimations}
           >
             <tspan x={8} y={22.041}>
               {
@@ -33,8 +48,9 @@ const Step = () => {
               }
             </tspan>
           </motion.text>
-          <path
-            id="Arrow 2"
+          <motion.path
+            // id="Arrow 2"
+            id="default"
             d="M100 196.25C99.5858 196.25 99.25 196.586 99.25 197C99.25 197.414 99.5858 197.75 100 197.75V196.25ZM580.53 197.53C580.823 197.237 580.823 196.763 580.53 196.47L575.757 191.697C575.465 191.404 574.99 191.404 574.697 191.697C574.404 191.99 574.404 192.464 574.697 192.757L578.939 197L574.697 201.243C574.404 201.536 574.404 202.01 574.697 202.303C574.99 202.596 575.465 202.596 575.757 202.303L580.53 197.53ZM100 197.75H580V196.25H100V197.75Z"
             fill="#1A1B22"
           />
@@ -46,9 +62,6 @@ const Step = () => {
             stroke="#1A1B22"
             strokeWidth={1.5}
             strokeLinecap="round"
-            initial={{ pathLength: 0 }}
-            animate={{ pathLength: 1 }}
-            transition={{ duration: duration / 5 }}
           />
           <motion.line
             id="Line 37"
@@ -56,19 +69,14 @@ const Step = () => {
             x1={356}
             y2={169}
             x2={576}
-            initial={{ x2: 356 }}
-            animate={{ x2: 576 }}
             stroke="#1A1B22"
             strokeWidth={1.5}
-            transition={{
-              delay: duration / 5,
-              duration: (duration * 4) / 5,
-            }}
           />
         </g>
         <g id="Point">
-          <circle
-            id="Ellipse 301"
+          <motion.circle
+            // id="Ellipse 301"
+            id="default"
             cx={340}
             cy={197}
             r={7.25}
@@ -77,8 +85,9 @@ const Step = () => {
             strokeWidth={1.5}
           />
         </g>
-        <text
-          id="x"
+        <motion.text
+          // id="x"
+          id="default"
           fill="#1A1B22"
           xmlSpace="preserve"
           style={{
@@ -92,9 +101,10 @@ const Step = () => {
           <tspan x={564.069} y={227.102}>
             {"x"}
           </tspan>
-        </text>
-        <text
-          id={2}
+        </motion.text>
+        <motion.text
+          // id="2"
+          id="default"
           fill="#1A1B22"
           xmlSpace="preserve"
           style={{
@@ -107,8 +117,8 @@ const Step = () => {
           <tspan x={329.161} y={227.167}>
             {"\u20132"}
           </tspan>
-        </text>
-        <g id="x-2">
+        </motion.text>
+        <motion.g id="x-2">
           <g id="Group">
             <g id="Group_2">
               <path
@@ -139,7 +149,7 @@ const Step = () => {
               />
             </g>
           </g>
-        </g>
+        </motion.g>
       </g>
     </AnimatedStep>
   )

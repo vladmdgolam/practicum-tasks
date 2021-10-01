@@ -1,8 +1,9 @@
 import React, { ReactElement } from "react"
 
 const recursiveMap = (
-  children: ReactElement[],
-  fn: (child: ReactElement) => ReactElement
+  children: ReactElement[] | ReactElement,
+  functionProps: object,
+  fn: (child: ReactElement, functionProps: object) => ReactElement
 ): ReactElement[] => {
   return React.Children.map(children, (child) => {
     if (!React.isValidElement(child)) {
@@ -11,12 +12,16 @@ const recursiveMap = (
 
     if ((child as ReactElement).props.children) {
       const props = {
-        children: recursiveMap((child as ReactElement).props.children, fn),
+        children: recursiveMap(
+          (child as ReactElement).props.children,
+          functionProps,
+          fn
+        ),
       }
       child = React.cloneElement(child, props)
     }
 
-    return fn(child)
+    return fn(child, functionProps)
   })
 }
 
