@@ -5,7 +5,6 @@ import recursiveMap from "../helpers/recursiveMap"
 
 interface AuxProps {
   children: ReactElement[] | ReactElement
-  // index: number
   animations: { [index: string]: any }
   visible: boolean
 }

@@ -1,29 +1,25 @@
 import { motion } from "framer-motion"
 import AnimatedStep from "../components/AnimatedStep"
 
-import { defaultAnimations, duration } from "../constants/index"
+import { defaultAnimations } from "../constants/index"
 
 const animations: { [index: string]: any } = {
   default: { ...defaultAnimations },
   Group_2: {
-    initial: { x: 68 },
-    animate: { x: 0 },
-    transition: { duration },
+    initial: { x: 68, opacity: 0 },
+    animate: { x: 0, opacity: 1 },
   },
   "-2": {
-    initial: { x: 57 },
-    animate: { x: 0 },
-    transition: { duration },
+    initial: { x: 57, opacity: 0 },
+    animate: { x: 0, opacity: 1 },
   },
   Group_3: {
-    initial: { x: 68 },
-    animate: { x: 0 },
-    transition: { duration },
+    initial: { x: 68, opacity: 0 },
+    animate: { x: 0, opacity: 1 },
   },
   "default-x": {
     initial: { opacity: 0, x: 68 },
     animate: { x: 0, opacity: 1 },
-    transition: { duration },
   },
 }
 
