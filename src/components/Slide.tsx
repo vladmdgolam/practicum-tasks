@@ -1,8 +1,8 @@
 import { useState } from "react"
-import Step from "../steps/4"
+import AnimatedSteps from "./AnimatedSteps"
 import ButtonWithPagination from "./ButtonWithPagination"
 
-const length = 2;
+const length = 2
 
 const Slide = () => {
   const [index, setStepIndex] = useState(0)
@@ -11,7 +11,7 @@ const Slide = () => {
   const prev = () => setStepIndex(index - 1)
   return (
     <div className="slide">
-      <Step />
+      <AnimatedSteps />
       <ButtonWithPagination
         index={index}
         length={length}
