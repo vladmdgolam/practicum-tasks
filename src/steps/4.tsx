@@ -7,14 +7,17 @@ const animations: { [index: string]: any } = {
   Group_2: {
     // 68
     exit: { x: -68 },
+    transition: { duration },
   },
   Group_3: {
     // 68
     initial: { opacity: 1 },
     exit: { x: -68, opacity: 0 },
+    transition: { duration },
   },
   "-2": {
     exit: { x: -57 },
+    transition: { duration },
   },
 
   default: { ...defaultAnimations },
@@ -32,7 +35,7 @@ const animations: { [index: string]: any } = {
     },
   },
   x: {
-    animate: {},
+    transition: { duration },
   },
 }
 
@@ -101,8 +104,8 @@ const Step = ({ visible = false }) => {
           />
         </g>
         <motion.text
-          id="x"
-          // id="default"
+          // id="x"
+          id="default"
           fill="#1A1B22"
           xmlSpace="preserve"
           style={{
