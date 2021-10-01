@@ -11,7 +11,7 @@ const Slide = () => {
   const prev = () => setStepIndex(index - 1)
   return (
     <div className="slide">
-      <AnimatedSteps />
+      <AnimatedSteps index={index} />
       <ButtonWithPagination
         index={index}
         length={length}

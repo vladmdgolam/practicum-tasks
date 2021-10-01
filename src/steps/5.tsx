@@ -1,6 +1,7 @@
+import { motion } from "framer-motion"
+
 const Step = () => {
   return (
-    <svg width={700} height={248} fill="none">
       <g id="Content">
         <g>
           <text
@@ -120,7 +121,7 @@ const Step = () => {
             </tspan>
           </text>
         </g>
-        <text
+        <motion.text
           id="x"
           fill="#1A1B22"
           xmlSpace="preserve"
@@ -135,8 +136,8 @@ const Step = () => {
           <tspan x={564.069} y={227.102}>
             {"x"}
           </tspan>
-        </text>
-        <g id="x-2 ">
+        </motion.text>
+        <g id="x-2">
           <g id="Group">
             <g id="Group_2">
               <path
@@ -208,7 +209,6 @@ const Step = () => {
           </g>
         </g>
       </g>
-    </svg>
   )
 }
 
