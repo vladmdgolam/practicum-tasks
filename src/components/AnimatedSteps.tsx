@@ -2,7 +2,7 @@ import { motion } from "framer-motion"
 import Fourth from "../steps/4"
 import Fifth from "../steps/5"
 
-const steps = [Fourth]
+const steps = [Fourth, Fifth]
 
 const AnimatedSteps = ({ index = 0 }) => {
   return (

@@ -2,7 +2,7 @@ import { useState } from "react"
 import AnimatedSteps from "./AnimatedSteps"
 import ButtonWithPagination from "./ButtonWithPagination"
 
-const length = 2
+const length = 3
 
 const Slide = () => {
   const [index, setStepIndex] = useState(0)
