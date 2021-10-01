@@ -1,5 +1,11 @@
+import Slide from "./Slide"
+
 const Card = () => {
-  return <div className="card">hi</div>
+  return (
+    <div className="card">
+      <Slide />
+    </div>
+  )
 }
 
 export default Card
