@@ -8,18 +8,22 @@ const animations: { [index: string]: any } = {
   Group_2: {
     initial: { x: 68 },
     animate: { x: 0 },
+    transition: { duration },
   },
   "-2": {
     initial: { x: 57 },
     animate: { x: 0 },
+    transition: { duration },
   },
   Group_3: {
     initial: { x: 68 },
     animate: { x: 0 },
+    transition: { duration },
   },
   "default-x": {
     initial: { opacity: 0, x: 68 },
     animate: { x: 0, opacity: 1 },
+    transition: { duration },
   },
 }
 

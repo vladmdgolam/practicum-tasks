@@ -1,6 +1,5 @@
 import { AnimatePresence } from "framer-motion"
 import { ReactElement, JSXElementConstructor, cloneElement } from "react"
-import { defaultAnimations, states } from "../constants"
 import recursiveMap from "../helpers/recursiveMap"
 
 interface AuxProps {
@@ -16,13 +15,13 @@ const animateElement = (
   // functionProps: fProps
   props: { [index: string]: any }
 ) => {
-  // если id есть в массиве анимаций
-  // применить анимации
+
   const { animations, visible } = props
   const { id } = child.props
+
+  // если id есть в массиве анимаций
+  // применить анимации
   if (animations[id] && Object.keys(animations[id]).length !== 0) {
-    // если есть свойство exit, используем AnimatePresence
-    // if (animations[id].hasOwnProperty("exit")) {
       return (
         <AnimatePresence>
           {visible &&
@@ -31,13 +30,7 @@ const animateElement = (
             })}
         </AnimatePresence>
       )
-    // }
   }
-  // else {
-  //   return cloneElement(child, {
-  //     ...defaultAnimations,
-  //   })
-  // }
   return child
 }
 
